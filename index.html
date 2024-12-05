@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Maddie Test</title>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <section>
+        <h1 class="title">Maddie Test</h1>
+        <p style="text-align: center;">Lets see how well you know Maddie</p>
+        </section>
+        <div class="image-container">
+            <img src="https://cdn.britannica.com/71/124171-004-3AB2FECC/Rock-peony.jpg" alt="Picture of a Peony Flower" width="200px">
+        </div>
+        <h2>Who is she?</h2>
+        <p>Madison Phane James is an <strong>extraordinaire</strong> girl with many talents and cool tricks! lets see how many you can get right.</p>
+        <form id="quiz-form">
+            <p>1.Favorite CN (cartoon Network) Show?</p>
+            <label><input type="radio" name="q1" value="Adventure Time">Adventure Time</label>
+            <label><input type="radio" name="q1" value="Steven Universe">Steven Universe</label>
+            <label><input type="radio" name="q1" value="FlapJack">FlapJack</label>
+            
+            <p>2.Whats her Ethnicity?</p>
+            <label><input type="radio" name="q2" value="Jamacian">Jamacian</label>
+            <label><input type="radio" name="q2" value="African">African</label>
+            <label><input type="radio" name="q2" value="Latina">Latina</label>
+            
+            <p>3.How many sibiligs does she have?</p>
+            <label><input type="radio" name="q3" value="0">0</label>
+            <label><input type="radio" name="q3" value="5">5</label>
+            <label><input type="radio" name="q3" value="15">15</label>
+
+            <button type="button" onclick="checkAnswers()"> Submit</button>
+        </form>
+            
+        <div id="feedback"></div>
+        <div id="score" class="score"></div>
+        
+        <script>
+            function checkAnswers() {
+            const answers = {
+                q1: "Steven Universe",
+                q2: "Jamacian",
+                q3: "5"
+
+            };
+            const feedback = document.getElementById("feedback");
+            feedback.innerHTML = ""; // Clear previous feedback
+            
+            const form = document.getElementById("quiz-form");
+            const formData = new FormData(form);
+            
+            let score = 0;
+            let total = Object.keys(answers).length;
+
+            for (let question in answers) {
+                const userAnswer = formData.get(question);
+                if (userAnswer === answers[question]) {
+                    feedback.innerHTML += `<p class="correct">Question ${question.slice(1)}: Correct!</p>`;
+                    score++;
+                } else {
+                    feedback.innerHTML += `<p class="wrong">Question ${question.slice(1)}: Wrong! Correct answer is ${answers[question]}.</p>`;
+                }
+            }
+            
+            scoreElement.innerHTML = `Your score: <strong>${score} / ${total}</strong>`;
+        }
+        </script>
+    </body>
+</html>
