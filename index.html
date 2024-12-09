@@ -15,7 +15,7 @@
             <img src="https://cdn.britannica.com/71/124171-004-3AB2FECC/Rock-peony.jpg" alt="Picture of a Peony Flower" width="200px">
         </div>
         <h2>Who is she?</h2>
-        <p>Madison Phane James is an <strong>extraordinaire</strong> girl with many talents and cool tricks! lets see how many you can get right.</p>
+        <p>Madison Phanae James is an <strong>extraordinary</strong> girl with many talents and cool tricks! lets see how many you can get right.</p>
         <form id="quiz-form">
             <p>1.Favorite CN (cartoon Network) Show?</p>
             <label><input type="radio" name="q1" value="Adventure Time">Adventure Time</label>
@@ -32,6 +32,21 @@
             <label><input type="radio" name="q3" value="5">5</label>
             <label><input type="radio" name="q3" value="15">15</label>
 
+            <p>4.Whats her Favorite Muscial Artist?</p>
+            <label><input type="radio" name="q4" value="PartyNextDoor">PartyNextDoor</label>
+            <label><input type="radio" name="q4" value="Steve-Lacey">Steve Lacey</label>
+            <label><input type="radio" name="q4" value="Drake">Drake</label>
+            
+            <p>5.What year was she born?</p>
+            <label><input type="radio" name="q5" value="2003">2003</label>
+            <label><input type="radio" name="q5" value="2005">2005</label>
+            <label><input type="radio" name="q5" value="2001">2001</label>
+            
+            <p>6.Whats her favorite Food?</p>
+            <label><input type="radio" name="q6" value="Ramen">Ramen</label>
+            <label><input type="radio" name="q6" value="Soul-food">Soul Food</label>
+            <label><input type="radio" name="q6" value="Mexican">Mexican</label>
+
             <button type="button" onclick="checkAnswers()"> Submit</button>
         </form>
             
@@ -43,7 +58,10 @@
             const answers = {
                 q1: "Steven Universe",
                 q2: "Jamacian",
-                q3: "5"
+                q3: "5",
+                q4: "PartyNextdoor",
+                q5: "2005",
+                q6: "Ramen"
 
             };
             const feedback = document.getElementById("feedback");
